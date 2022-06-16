@@ -2,6 +2,7 @@ package de.kebidge.hft.dpt.ccbackend;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 
 import org.slf4j.Logger;
@@ -34,12 +35,12 @@ public class CcBackendController {
     }
  
     @GetMapping("/user")
-    public ArrayList<Optional<CcBackendUserEntity>> getUser() {
+    public List<Optional<CcBackendUserEntity>> getUser() {
      
         Iterable<CcBackendUserEntity> iterableUser = userRepository.findAll();
  
-        ArrayList<String> userList = new ArrayList<String>();
-        ArrayList<Optional<CcBackendUserEntity>> optionalUserList = new ArrayList<Optional<CcBackendUserEntity>>();
+        List<String> userList = new ArrayList<String>();
+        List<Optional<CcBackendUserEntity>> optionalUserList = new ArrayList<Optional<CcBackendUserEntity>>();
          
         Iterator<CcBackendUserEntity> userIterator = iterableUser.iterator();
 
