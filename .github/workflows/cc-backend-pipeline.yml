@@ -39,7 +39,14 @@ jobs:
       
       # Build Maven Project and skip Tests
       - name: Build with Maven
-        run: mvn clean package -DskipTests
+        run: mvn clean package -DskipTests        
+
+      # List target directory after building jar
+      - name: List target directory
+        run: |
+          ls -la
+          cd target
+          ls -la
         
       # Upload Target Directory as GitHub Artefact
       - name: Cache Target Directory
