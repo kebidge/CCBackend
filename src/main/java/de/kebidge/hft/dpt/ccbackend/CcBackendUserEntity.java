@@ -12,10 +12,10 @@ public class CcBackendUserEntity {
     long id;
  
     String username;
- 
+ /* 
     public CcBackendUserEntity() {
-        
-    }  
+
+    }  */
  
     public CcBackendUserEntity(String name){
  
