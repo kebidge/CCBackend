@@ -13,6 +13,10 @@ public class CcBackendUserEntity {
  
     String username;
  
+    public CcBackendUserEntity() {
+        
+    }  
+ 
     public CcBackendUserEntity(String name){
  
         this.username = name;
