@@ -128,6 +128,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [image]
 
+    steps:
+
       - name: Setup Google Cloud CLI (gcloud)
         uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
         with:
