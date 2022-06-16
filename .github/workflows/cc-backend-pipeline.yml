@@ -59,18 +59,6 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v3
-        
-      - name: JUnit Tests
-        run: mvn test
-        
-      - name: Report
-        uses: dorny/test-reporter@v1
-        if: always()
-        with:
-          name: Maven JUnit Tests
-          path: target/surefire-reports/*.xml
-          reporter: java-junit
-          fail-on-error: true
 
       - name: Setup PMD Source Code Analyzer
         uses: sfdx-actions/setup-pmd@v1
