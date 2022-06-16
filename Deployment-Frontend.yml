@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cc-frontend
+  name: cc-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cc-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cc-frontend
+    spec:
+      containers:
+      - image: kebidge/cc-frontend:latest
+        name: cc-frontend
+        env:
+        - name: SIMPLE_BACKEND_ENDPOINT
+          value: http://cc-backend:80/item/
+        resources: {}
+status: {}

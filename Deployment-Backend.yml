@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: cc-backend
+  name: cc-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cc-backend
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: cc-backend
+    spec:
+      containers:
+      - image: kebidge/cc-backend:latest
+        name: cc-backend
+        env:
+        - name: SPRING_DATASOURCE_PASSWORD
+          value: pwd
+        - name: SPRING_DATASOURCE_USERNAME
+          value: kebidge
+        - name: SPRING_DATASOURCE_URL
+          value: jdbc:postgresql://database:5432/cc-backend-db
+        resources: {}
+status: {}
