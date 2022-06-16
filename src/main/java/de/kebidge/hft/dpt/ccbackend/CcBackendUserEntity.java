@@ -12,10 +12,11 @@ public class CcBackendUserEntity {
     long id;
  
     String username;
- /* 
+  
     public CcBackendUserEntity() {
 
-    }  */
+        // Default constructor
+    }  
  
     public CcBackendUserEntity(String name){
  

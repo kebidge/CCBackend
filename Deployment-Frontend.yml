@@ -21,7 +21,7 @@ spec:
       - image: kebidge/cc-frontend:latest
         name: cc-frontend
         env:
-        - name: SIMPLE_BACKEND_ENDPOINT
+        - name: CC_BACKEND_ENDPOINT
           value: http://cc-backend:80/user/
         resources: {}
 status: {}
