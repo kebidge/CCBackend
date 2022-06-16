@@ -25,6 +25,6 @@ spec:
         - name: SPRING_DATASOURCE_USERNAME
           value: kebidge
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://cc-backend-db:5432/cc-backend-db
+          value: jdbc:postgresql://database:5432/cc-backend-db
         resources: {}
 status: {}
