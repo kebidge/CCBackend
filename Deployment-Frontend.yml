@@ -6,7 +6,7 @@ metadata:
     app: cc-frontend
   name: cc-frontend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: cc-frontend
@@ -22,6 +22,6 @@ spec:
         name: cc-frontend
         env:
         - name: SIMPLE_BACKEND_ENDPOINT
-          value: http://cc-backend:80/item/
+          value: http://cc-backend:80/user/
         resources: {}
 status: {}
