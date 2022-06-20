@@ -6,7 +6,7 @@ metadata:
     app: cc-backend
   name: cc-backend
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: cc-backend
