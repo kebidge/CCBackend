@@ -17,7 +17,7 @@ on:
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
   GKE_CLUSTER: cc-prod-cluster
-  GKE_ZONE: europe-west1-b
+  GKE_ZONE: europe-central2-a
   DEPLOYMENT_NAME: cc-backend
   IMAGE: cc-backend-image
   TAG: latest
