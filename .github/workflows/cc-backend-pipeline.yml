@@ -158,6 +158,7 @@ jobs:
         run: |-
           kubectl delete deployment $DEPLOYMENT_BACKEND
           kubectl delete deployment $DEPLOYMENT_FRONTEND
+          kubectl delete deployment cc-backend-db
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/$DEPLOYMENT_BACKEND
           kubectl rollout status deployment/$DEPLOYMENT_FRONTEND
