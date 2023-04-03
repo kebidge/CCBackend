@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  #creationTimestamp: null
   labels:
     app: cc-backend
   name: cc-backend
@@ -12,7 +12,7 @@ spec:
       app: cc-backend
   template:
     metadata:
-      creationTimestamp: null
+      #creationTimestamp: null
       labels:
         app: cc-backend
     spec:
@@ -21,10 +21,10 @@ spec:
         name: cc-backend
         env:
         - name: SPRING_DATASOURCE_PASSWORD
-          value: pwd
+          value: ${{secrets.POSTGRES_PASSWORD}}
         - name: SPRING_DATASOURCE_USERNAME
-          value: kebidge
+          value: ${{secrets.POSTGRES_USER}}
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://cc-backend-db:5432/cc-backend-db
-        resources: {}
-status: {}
+          value: jdbc:postgresql://${{secrets.POSTGRES_DB}}:5432/${{secrets.POSTGRES_DB}}
+#        resources: {}
+#status: {}

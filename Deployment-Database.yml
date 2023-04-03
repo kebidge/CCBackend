@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  #creationTimestamp: null
   labels:
     app: cc-backend-db
   name: cc-backend-db
@@ -13,7 +13,7 @@ spec:
   strategy: {}
   template:
     metadata:
-      creationTimestamp: null
+      #creationTimestamp: null
       labels:
         app: cc-backend-db
     spec:
@@ -22,10 +22,10 @@ spec:
         name: postgres
         env:
         - name: POSTGRES_PASSWORD
-          value: pwd
+          value: ${{secrets.POSTGRES_PASSWORD}}
         - name: POSTGRES_USER
-          value: kebidge
+          value: ${{secrets.POSTGRES_USER}}
         - name: POSTGRES_DB
-          value: cc-backend-db
-        resources: {}
-status: {}
+          value: ${{secrets.POSTGRES_DB}}
+        #resources: {}
+#status: {}

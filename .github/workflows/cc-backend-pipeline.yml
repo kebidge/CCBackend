@@ -16,9 +16,10 @@ on:
 # Environment Variables
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
-  GKE_CLUSTER: cc-prod-cluster
+  GKE_CLUSTER: ${{secrets.GKE_CLUSTER_NAME}}
   GKE_ZONE: europe-central2-a
-  DEPLOYMENT_NAME: cc-backend
+  DEPLOYMENT_BACKEND: cc-backend
+  DEPLOYMENT_FRONTEND: cc-frontend
   IMAGE: cc-backend-image
   TAG: latest
 
@@ -119,7 +120,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DEPLOYMENT_NAME }}:${{ env.TAG }}
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.DEPLOYMENT_BACKEND }}:${{ env.TAG }}
   
   # This is the furth job of the workflow called "deploy"
   deploy: 
@@ -155,19 +156,17 @@ jobs:
 
       - name: Deploy Image to GKE cluster
         run: |-
-          kubectl delete deployment $DEPLOYMENT_NAME
-          kubectl delete deployment cc-frontend
           ./kustomize build . | kubectl apply -f -
-          kubectl rollout status deployment/$DEPLOYMENT_NAME
-          kubectl rollout status deployment/cc-frontend
+          kubectl rollout status deployment/DEPLOYMENT_BACKEND
+          kubectl rollout status deployment/DEPLOYMENT_FRONTEND
           kubectl get services
           kubectl get pods
 
 # kubectl get services -o wide
 
 # only use for the second time -> Never for the first time
-  # kubectl delete deployment $DEPLOYMENT_NAME
-  # kubectl delete deployment cc-frontend
+  # kubectl delete deployment DEPLOYMENT_BACKEND
+  # kubectl delete deployment DEPLOYMENT_FRONTEND
 
 # to deploy also the frontend
-  # kubectl rollout status deployment/cc-frontend
+  # kubectl rollout status deployment/DEPLOYMENT_FRONTEND
