@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
+  #creationTimestamp: null
   labels:
     app: cc-frontend
   name: cc-frontend
@@ -10,10 +10,10 @@ spec:
   selector:
     matchLabels:
       app: cc-frontend
-  strategy: {}
+  #strategy: {}
   template:
     metadata:
-      creationTimestamp: null
+      #creationTimestamp: null
       labels:
         app: cc-frontend
     spec:
@@ -23,5 +23,5 @@ spec:
         env:
         - name: CC_BACKEND_ENDPOINT
           value: http://cc-backend:80/user/
-        resources: {}
-status: {}
+        #resources: {}
+#status: {}

@@ -157,7 +157,7 @@ jobs:
       - name: Deploy Image to GKE cluster
         run: |-
           kubectl delete deployment $DEPLOYMENT_BACKEND
-          kubectl delete deployment $DEPLOYMENT_FRONTEND
+           kubectl delete deployment $DEPLOYMENT_FRONTEND
           kubectl delete deployment cc-backend-db
           ./kustomize build . | kubectl apply -f -
           kubectl rollout status deployment/$DEPLOYMENT_BACKEND
@@ -170,6 +170,7 @@ jobs:
 # only use for the second time -> Never for the first time
   # kubectl delete deployment $DEPLOYMENT_BACKEND
   # kubectl delete deployment $DEPLOYMENT_FRONTEND
+  # kubectl delete deployment cc-backend-db
 
 # to deploy also the frontend
   # kubectl rollout status deployment/DEPLOYMENT_FRONTEND
