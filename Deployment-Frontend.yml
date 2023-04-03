@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  c#reationTimestamp: null
+  #creationTimestamp: null
   labels:
     app: cc-frontend
   name: cc-frontend
