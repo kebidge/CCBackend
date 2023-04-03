@@ -21,10 +21,10 @@ spec:
         name: cc-backend
         env:
         - name: SPRING_DATASOURCE_PASSWORD
-          value: ${{secrets.POSTGRES_PASSWORD}}
+          value: pwd
         - name: SPRING_DATASOURCE_USERNAME
-          value: ${{secrets.POSTGRES_USER}}
+          value: kebidge
         - name: SPRING_DATASOURCE_URL
-          value: jdbc:postgresql://${{secrets.POSTGRES_DB}}:5432/${{secrets.POSTGRES_DB}}
+          value: jdbc:postgresql://cc-backend-db:5432/cc-backend-db
         resources: {}
 status: {}

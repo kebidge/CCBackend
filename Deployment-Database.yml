@@ -22,10 +22,10 @@ spec:
         name: postgres
         env:
         - name: POSTGRES_PASSWORD
-          value: ${{secrets.POSTGRES_PASSWORD}}
+          value: pwd
         - name: POSTGRES_USER
-          value: ${{secrets.POSTGRES_USER}}
+          value: kebidge
         - name: POSTGRES_DB
-          value: ${{secrets.POSTGRES_DB}}
+          value: cc-backend-db
         resources: {}
 status: {}
